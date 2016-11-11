@@ -1,0 +1,18 @@
+<h1>You've been registered!<h1>
+  <h3> Hello!  <%= @user.user_d %></h3>
+  <h3> Name:<%= @user.full_name%></h3>
+  <h3> Address: <%= @user.street_address %></h3>
+  <h3> City: <%= @user.city %></h3>
+  <h3> State: <%= @user.state %></h3>
+  <h3> Postal Code: <%= @user.postal_code %></h3>
+  <h3> Country: <%= @user.country %></h3>
+
+  <h3>Phone :<% if @user.phones.length > 0 %></h3>
+  <ul>
+    <% @user.phones.each do |phone| %>
+    <li><%= phone.number %></li>
+    <%end%>
+  </ul>
+  <% else %>
+  <h3> No Phone</h3>
+  <% end %>
